@@ -9,10 +9,10 @@ namespace MoodTestProject
         public void GivenSadMoodMessage_ShouldreturnSad()
         {
             //arrange
-            Mood moodobj = new Mood();
+            MoodAnalyse moodobj = new MoodAnalyse("Sad");
             string Expectedresult = "Sad";
             //act
-            string Actualresult = moodobj.MoodAnalyser("Sad");
+            string Actualresult = moodobj.MoodAnalyser();
 
             //assert
             Assert.AreEqual(Expectedresult, Actualresult);
@@ -21,10 +21,10 @@ namespace MoodTestProject
         public void GivenHappyMoodMessage_ShouldreturnHappy()
         {
             //arrange
-            Mood moodobj = new Mood();
+            MoodAnalyse moodobj = new MoodAnalyse("Happy");
             string Expectedresult = "Happy";
             //act
-            string Actualresult = moodobj.MoodAnalyser("Happy");
+            string Actualresult = moodobj.MoodAnalyser();
 
             //assert
             Assert.AreEqual(Expectedresult, Actualresult);
