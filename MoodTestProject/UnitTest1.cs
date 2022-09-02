@@ -17,5 +17,17 @@ namespace MoodTestProject
             //assert
             Assert.AreEqual(Expectedresult, Actualresult);
         }
+        [TestMethod]
+        public void GivenHappyMoodMessage_ShouldreturnHappy()
+        {
+            //arrange
+            Mood moodobj = new Mood();
+            string Expectedresult = "Happy";
+            //act
+            string Actualresult = moodobj.MoodAnalyser("Happy");
+
+            //assert
+            Assert.AreEqual(Expectedresult, Actualresult);
+        }
     }
 }
