@@ -17,6 +17,11 @@ namespace Mood_Analyzer_Problem
         {
             try
             {
+                if (this.Mood.Equals(string.Empty))
+                {
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.EMPTY_MESSAGE, "Mood Should Not Be Empty");
+
+                }
                 if (Mood.ToLower().Contains("sad"))
                 {
                     Console.WriteLine("Sad Mood");
@@ -29,9 +34,13 @@ namespace Mood_Analyzer_Problem
                     return "Happy Mood";
                 }
             }
-            catch (Exception)
+            catch (NullReferenceException)
             {
-                return "Happy";
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "Mood Should Not Be Null");
+            }
+            catch (MoodAnalyserCustomException)
+            {
+                return "Mood Should Not Be Empty";
             }
         }
     }
