@@ -2,14 +2,14 @@
 {
     public class Program
     {
-        public static string Happy_Mood = "I am in happy mood";
-        public static string Sad_Mood = "I am in sad mood";
         public static void Main(string[] args)
         {
-            MoodAnalyse obj1 = new MoodAnalyse(Happy_Mood);
-            obj1.MoodAnalyser();
-            MoodAnalyse obj2 = new MoodAnalyse(Sad_Mood);
-            obj2.MoodAnalyser();
+            string Enter_Mood;
+            Console.WriteLine("Welcome to Mood Analyser Program");
+            Console.WriteLine("Enter Mood");
+            Enter_Mood = Console.ReadLine();
+            MoodAnalyse obj = new MoodAnalyse(Enter_Mood);
+            obj.MoodAnalyser();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace MoodTestProject
         {
             //arrange
             MoodAnalyse moodobj = new MoodAnalyse("Sad");
-            string Expectedresult = "Sad";
+            string Expectedresult = "Sad Mood";
             //act
             string Actualresult = moodobj.MoodAnalyser();
 
@@ -22,7 +22,7 @@ namespace MoodTestProject
         {
             //arrange
             MoodAnalyse moodobj = new MoodAnalyse("Happy");
-            string Expectedresult = "Happy";
+            string Expectedresult = "Happy Mood";
             //act
             string Actualresult = moodobj.MoodAnalyser();
 
