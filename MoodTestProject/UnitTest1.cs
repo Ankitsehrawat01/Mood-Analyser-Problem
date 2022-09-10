@@ -55,5 +55,21 @@ namespace MoodTestProject
                 Assert.AreEqual("Mood Should Not Be Null", e.Message);
             }
         }
+        [TestMethod]
+        public void GivenEmptyMood_ShouldthrowMoodAnalysisException_IndicatingEmptyMood()
+        {
+            try
+            {
+                //Arrange
+                MoodAnalyse moodobj = new MoodAnalyse("");
+                //Act
+                string actual = moodobj.MoodAnalyser();
+            }
+            catch (MoodAnalyserCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Mood Should Not Be Empty", e.Message);
+            }
+        }
     }
 }
