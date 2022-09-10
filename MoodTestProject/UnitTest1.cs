@@ -25,7 +25,6 @@ namespace MoodTestProject
             string Expectedresult = "Happy Mood";
             //act
             string Actualresult = moodobj.MoodAnalyser();
-
             //assert
             Assert.AreEqual(Expectedresult, Actualresult);
         }
@@ -39,6 +38,22 @@ namespace MoodTestProject
             string Actualresult = moodobj.MoodAnalyser();
             //Assert
             Assert.AreEqual(Actualresult, Expectedresult);
+        }
+        [TestMethod]
+        public void GivenNullMood_ShouldthrowMoodAnalysisException()
+        {
+            try
+            {
+                //Arrange
+                MoodAnalyse moodobj = new MoodAnalyse("null");
+                //Act
+                string actual = moodobj.MoodAnalyser();
+            }
+            catch (MoodAnalyserCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Mood Should Not Be Null", e.Message);
+            }
         }
     }
 }
